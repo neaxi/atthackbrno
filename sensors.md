@@ -21,7 +21,22 @@ Tutorials: https://www.raspberrypi.org/learning/getting-started-with-the-sense-h
 ## Sensors types
 A - analog<BR>
 D - digital<BR>
-A/D - analog which works also as a digital with expected limitations<BR>
+A/D - analog which works also as a digital with expected limitations
+
+Most of the sensors are digital input output and will work with basic GPIO.
+**Simple output pin**
+`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM<BR>
+usedPin = 37                # pin 37 = BCM GPIO26<BR>
+GPIO.setup(usedPin , GPIO.OUT)<BR>
+GPIO.output(usedPin , GPIO.HIGH)<BR>
+GPIO.output(usedPin , GPIO.LOW)`
+
+**Simple input pin**
+`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM<BR>
+usedPin = 37                # pin 37 = BCM GPIO26<BR>
+GPIO.setup(usedPin , GPIO.IN, pull_up_down=GPIO.PUD_UP) <BR>
+GPIO.input(usedPin) `
+
 
 ## Additional resources & code examples
 Stuttgart university Git: https://github.com/timwaizenegger/raspberrypi-examples  <BR>
@@ -30,8 +45,6 @@ https://tkkrlab.nl/wiki/Arduino_37_sensors <BR>
 http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino <BR>
 
 ## Overview and notes
-Sensor kit leaflet: https://github.com/neaxi/v4hack/blob/master/sensor_kit_leaflet.pdf
-
 | No. | Type | Sensor | Notes
 | --- | --- | --- | ----
 | KY001| digital| Temp module| https://tkkrlab.nl/wiki/Arduino_KY-001_Temperature_sensor_module
