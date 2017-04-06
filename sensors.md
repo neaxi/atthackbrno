@@ -29,6 +29,7 @@ More resources on the sensors: <BR>
 https://tkkrlab.nl/wiki/Arduino_37_sensors <BR>
 http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino <BR>
 
+## Overview and notes
 | No. | Type | Sensor | Notes
 | --- | --- | --- | ----
 | KY001| digital| Temp module| https://tkkrlab.nl/wiki/Arduino_KY-001_Temperature_sensor_module
