@@ -21,21 +21,21 @@ Tutorials: https://www.raspberrypi.org/learning/getting-started-with-the-sense-h
 ## Sensors types
 A - analog<BR>
 D - digital<BR>
-A/D - analog which works also as a digital with expected limitations
+A/D - analog which works also as a digital with expected limitations.<BR><BR>
 
-Most of the sensors are digital input output and will work with basic GPIO.
-**Simple output pin**
-`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM<BR>
-usedPin = 37                # pin 37 = BCM GPIO26<BR>
-GPIO.setup(usedPin , GPIO.OUT)<BR>
-GPIO.output(usedPin , GPIO.HIGH)<BR>
-GPIO.output(usedPin , GPIO.LOW)`
+Most of the sensors are digital input output and will work with basic GPIO.<BR>
+**Simple output pin**<BR>
+`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM`
+`usedPin = 37                # pin 37 = BCM GPIO26`
+`GPIO.setup(usedPin , GPIO.OUT)`
+`GPIO.output(usedPin , GPIO.HIGH)`
+`GPIO.output(usedPin , GPIO.LOW)`
 
-**Simple input pin**
-`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM<BR>
-usedPin = 37                # pin 37 = BCM GPIO26<BR>
-GPIO.setup(usedPin , GPIO.IN, pull_up_down=GPIO.PUD_UP) <BR>
-GPIO.input(usedPin) `
+**Simple input pin**<BR>
+`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM`
+`usedPin = 37                # pin 37 = BCM GPIO26`
+`GPIO.setup(usedPin , GPIO.IN, pull_up_down=GPIO.PUD_UP)`
+`GPIO.input(usedPin) `
 
 
 ## Additional resources & code examples
