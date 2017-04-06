@@ -4,7 +4,8 @@ Hello, in front of you is lying Raspberry Pi 3 loaded with a default Raspbian OS
 # How to connect
 ## Network
 ### Wi-Fi
-Raspberry is set to connect automatically to provided wifi network. IP address is assigned dynamicaly.
+Raspberry is set to connect automatically to provided wifi network. 
+IP address is assigned dynamicaly.
 To find an IP for your Raspberry check the label on the board.
 RasPi01 = 10.10.1.1,
 RasPi02 = 10.10.1.2,
