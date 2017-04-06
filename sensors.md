@@ -30,6 +30,8 @@ https://tkkrlab.nl/wiki/Arduino_37_sensors <BR>
 http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino <BR>
 
 ## Overview and notes
+Sensor kit leaflet: https://github.com/neaxi/v4hack/blob/master/sensor_kit_leaflet.pdf
+
 | No. | Type | Sensor | Notes
 | --- | --- | --- | ----
 | KY001| digital| Temp module| https://tkkrlab.nl/wiki/Arduino_KY-001_Temperature_sensor_module
