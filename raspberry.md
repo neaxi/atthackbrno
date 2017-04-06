@@ -22,5 +22,7 @@ Passwords are the same for all the boards.
 Please change them to your own as a first step to prevent access of the other teams to your device.
 
 root:&nbsp;raspiroot
+
 pi:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raspipi
+
 vnc:&nbsp;&nbsp;raspivnc
