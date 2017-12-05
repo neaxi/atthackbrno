@@ -1,18 +1,26 @@
 # Getting started with Raspberry Pi
-Hello, in front of you is lying Raspberry Pi 3 loaded with a default Raspbian OS (release 2017-03-02).
+Hello, in front of you is lying Raspberry Pi 3 loaded with a default Raspbian OS.
 
 # How to connect
 ## Network
 ### Wi-Fi
 Raspberry is set to connect automatically to provided wifi network. <BR>
-IP address is assigned dynamicaly.<BR>
+IP address is assigned dynamically.<BR>
 To find an IP for your Raspberry check the label on the board.<BR>
 RasPi01 = 10.10.1.1,<BR>
 RasPi02 = 10.10.1.2,<BR>
 and so on...<BR>
 ### Ethernet
-For direct connection to your laptop only.<BR>
 Interface is set to 192.168.1.10/24 so please set your laptop on the same subnet if you wish to connect via cable.
+The connection is available mainly for direct connection with your laptop.
+If you wish to test your application with ethernet connection, please change IP assignment to dhcp/dynamic before connecting to the switch.
+  opt GUI) change the setting in the system Network manager
+  opt CLI) comment out the static assignemnt in /etc/dhcpcd.conf
+Once connected you'll obtain IP equal to 10.10.1.100+raspi number
+RasPi01 = 10.10.1.101,<BR>
+RasPi02 = 10.10.1.102,<BR>
+etc...
+
 ## Access & Passwords
 Available connections:
  * SSH for CLI.
