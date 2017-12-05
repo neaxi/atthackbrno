@@ -12,10 +12,10 @@ RasPi02 = 10.10.1.2,<BR>
 and so on...<BR>
 ### Ethernet
 Interface is set to 192.168.1.10/24 so please set your laptop on the same subnet if you wish to connect via cable.<BR>
-The connection is available mainly for direct connection with your laptop.<BR>
-If you wish to test your application with ethernet connection, please change IP assignment to dhcp/dynamic before connecting to the switch.<BR>
-  opt GUI) change the setting in the system Network manager<BR>
-  opt CLI) comment out the static assignemnt in /etc/dhcpcd.conf<BR>
+The connection is available mainly for direct connection with your laptop.<BR><BR>
+If you wish to test your application with ethernet connection, please change IP assignment to dhcp/dynamic before connecting to the switch. There are two options on how to do it:<BR><BR>
+&nbsp;&nbsp;&nbsp; **opt GUI)** change the setting in the system Network manager<BR>
+&nbsp;&nbsp;&nbsp; **opt CLI)** comment out the static assignemnt in /etc/dhcpcd.conf<BR><BR>
 Once connected you'll obtain IP equal to 10.10.1.100+raspi number<BR>
 RasPi01 = 10.10.1.101,<BR>
 RasPi02 = 10.10.1.102,<BR>
