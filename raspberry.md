@@ -34,7 +34,9 @@ Please change them to your own as a first step to prevent access of the other te
  * pi:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raspipi
  * vnc:&nbsp;&nbsp;raspivnc
 
-# GPIO connections
+# Connectivity
+Schematics: https://www.jameco.com/Jameco/workshop/circuitnotes/raspberry-pi-circuit-note.html
+GPIO pinout details: https://pinout.xyz
 
 
 # Sense HAT
