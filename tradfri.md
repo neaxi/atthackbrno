@@ -32,7 +32,7 @@ In our case IP addresses assigned to gatways are binded in the DHCP and are corr
  - tradfri1: 10.10.2.101 
  - tradfri2: 10.10.2.102
 
-## Manual coap communication
+## Manual coap setup
 In case you would want to try the PSK setup process manually, you have to install coap-client.<BR>
 PSK can be requested only once per identity!
 
