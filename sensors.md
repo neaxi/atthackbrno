@@ -1,29 +1,10 @@
-Python focused
-
-# RC522 - RFID reader
-https://github.com/ondryaso/pi-rc522
-Connected by the table, git clone/pip install, executed the samples, works.<BR>
-Can read/write the chips - check git examples.
-
-# MPU-6050 - Gyro and accelerometer
-http://blog.bitify.co.uk/2013/11/interfacing-raspberry-pi-and-mpu-6050.html <BR>
-http://blog.bitify.co.uk/2013/11/reading-data-from-mpu-6050-on-raspberry.html <BR>
-Check on which i2c bus is the sensor present. Should be 0 for old RasPi and 1 for newer models. 
-Modify your source code accordingly to use correct bus.<BR>
-`i2cdetect -y 01`
-
-# SenseHAT
-Python library is already present.<BR>
-Complete API reference: https://pythonhosted.org/sense-hat/api/ <BR>
-Tutorials: https://www.raspberrypi.org/learning/getting-started-with-the-sense-hat/
-
-# Sensor kit
-## Sensors types
+# Sensors types
 A - analog<BR>
 D - digital<BR>
 A/D - analog which works also as a digital with expected limitations.<BR><BR>
-
 Most of the sensors are digital input//output and will work with basic GPIO.<BR>
+
+## RasPi GPIO reminder
 **Simple output pin**<BR>
 `GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM`<BR>
 `usedPin = 37                # pin 37 = BCM GPIO26`<BR>
@@ -38,7 +19,31 @@ Most of the sensors are digital input//output and will work with basic GPIO.<BR>
 `GPIO.input(usedPin) `
 
 
-## Additional resources & code examples
+# RC522 - RFID reader
+https://github.com/ondryaso/pi-rc522
+Connected by the table, git clone/pip install, executed the samples, works.<BR>
+Can read/write the chips - check git examples.
+
+# MPU-6050 - Gyro and accelerometer
+http://blog.bitify.co.uk/2013/11/interfacing-raspberry-pi-and-mpu-6050.html <BR>
+http://blog.bitify.co.uk/2013/11/reading-data-from-mpu-6050-on-raspberry.html <BR>
+Check on which i2c bus is the sensor present. Should be 0 for old RasPi and 1 for newer models. 
+Modify your source code accordingly to use correct bus.<BR>
+`i2cdetect -y 01`
+
+# SHARP GP2Y1010AU0F airborne dust sensor
+[Datasheet](http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf) <BR>
+[Arduino setup](https://github.com/PaulZC/GP2Y1010AU0F_Dust_Sensor) <br>
+
+# HC SR501
+[arduino manual](http://henrysbench.capnfatz.com/henrys-bench/arduino-sensors-and-input/arduino-hc-sr501-motion-sensor-tutorial/) <BR>
+[RasPi manual](https://www.modmypi.com/blog/raspberry-pi-gpio-sensing-motion-detection)
+  
+# SSD1306 OLED display
+https://learn.adafruit.com/monochrome-oled-breakouts
+https://github.com/squix78/esp8266-oled-ssd1306
+
+# 37 sensors kit
 Stuttgart university Git: https://github.com/timwaizenegger/raspberrypi-examples  <BR>
 More resources on the sensors: <BR>
 https://tkkrlab.nl/wiki/Arduino_37_sensors <BR>
