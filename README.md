@@ -1,25 +1,17 @@
 # #atthack
+This repository aims to provide basic info about hardware which is available to participants of AT&T Brno Hackathons.
 
-# Raspberry
-https://github.com/neaxi/v4hack/blob/master/raspberry.md
-
-# TI MSP430 Launchpad
-https://github.com/neaxi/atthackbrno/blob/master/TI_MSP430.md
-
-# IKEA
-
+# Platforms
+ - [Raspberry Pi 3](https://github.com/neaxi/atthackbrno/blob/master/raspberry.md)
+ - [Texas Instruments MSP430](https://github.com/neaxi/atthackbrno/blob/master/TI_MSP430.md)
+ - [IKEA TRÅDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
 
 # Sensors & peripherals
-Overview of sensors
-https://github.com/neaxi/v4hack/blob/master/sensors.md
-
-...
-...
-...
-
-...
+ - [Overview of sensors](https://github.com/neaxi/atthackbrno/blob/master/sensors.md)
+ - [Sensor kit photo leaflet](https://github.com/neaxi/v4hack/blob/master/sensor_kit_leaflet.pdf)
 
 
 
-37 sensor kit photo leaflet
-https://github.com/neaxi/v4hack/blob/master/sensor_kit_leaflet.pdf
+
+
+
