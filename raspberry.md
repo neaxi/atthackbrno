@@ -1,8 +1,8 @@
 # Getting started with Raspberry Pi
-Hello, in front of you is lying Raspberry Pi 3 loaded with a default Raspbian OS.
+Hello, in front of you is Raspberry Pi 3 loaded with a default Raspbian OS.
+In case you would want to flash this image onto your device, you can find the .img file on local file share.
 
-# How to connect
-## Network
+# Network / How to connect
 ### Wi-Fi
 Raspberry is set to connect automatically to provided wifi network. <BR>
 IP address is assigned dynamically.<BR>
