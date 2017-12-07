@@ -1,8 +1,15 @@
-# Sensors types
+# Sensors
 A - analog<BR>
 D - digital<BR>
 A/D - analog which works also as a digital with expected limitations.<BR><BR>
 Most of the sensors are digital input//output and will work with basic GPIO.<BR>
+
+Pay attention to technical specifications, like input voltage needed for correct operation. <BR>
+<span style="color:red">**Watch out for logic which is used by the device (3.3V vs. 5V).**</span>
+  
+If you're adapting Arduino code to Texas Instruments MSP430, you need to consider that Arduino has 10 bit ADC and provides 0-1023 resolution, but TI's ADC is 12 bit and returns values 0-4095.
+
+
 
 ## RasPi GPIO reminder
 **Simple output pin**<BR>
@@ -40,7 +47,7 @@ Modify your source code accordingly to use correct bus.<BR>
 [RasPi manual](https://www.modmypi.com/blog/raspberry-pi-gpio-sensing-motion-detection)
   
 # SSD1306 OLED display
-https://learn.adafruit.com/monochrome-oled-breakouts
+https://learn.adafruit.com/monochrome-oled-breakouts <BR>
 https://github.com/squix78/esp8266-oled-ssd1306
 
 # 37 sensors kit
