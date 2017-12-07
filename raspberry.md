@@ -1,5 +1,5 @@
 # Getting started with Raspberry Pi
-Hello, in front of you is Raspberry Pi 3 loaded with a default Raspbian OS.
+Hello, in front of you is Raspberry Pi 3 loaded with a default Raspbian OS.<BR>
 In case you would want to flash this image onto your device, you can find the .img file on local file share.
 
 # Network / How to connect
