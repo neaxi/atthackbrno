@@ -6,10 +6,14 @@ CC3100 - WiFi plug-on board<BR><BR>
 It's enough to put power cable only into the MSP430F5229 board. The wifi will be powered from it<BR>
 
 ### Launchpad pinout
+Pinout mapping definitions in the library<BR> 
 https://github.com/energia/Energia/blob/master/hardware/msp430/variants/launchpad_f5529/pins_energia.h
+<BR> <BR> 
+Graphical pinout<BR> 
 http://energia.nu/img/LaunchPadMSP430F5529.jpg
 ![alt text](http://energia.nu/img/LaunchPadMSP430F5529.jpg "MSP430F5529 pinout")
 
+Pinout mapping on the WiFi CC3100 boost module<BR> 
 http://energia.nu/wordpress/wp-content/uploads/2014/09/CC3100-WiFi-BoosterPack-%E2%80%94-Pins-Maps.jpg
 ![alt text](http://energia.nu/wordpress/wp-content/uploads/2014/09/CC3100-WiFi-BoosterPack-%E2%80%94-Pins-Maps.jpg "CC3100 pinout")
 
@@ -37,14 +41,17 @@ http://energia.nu/reference/wifi/<BR>
 To test out the wifi connection select "GetMacAddress" sample in the Energia IDE:<BR>
 https://github.com/energia/Energia/blob/master/hardware/cc3200/libraries/WiFi/examples/GetMacAddress/GetMacAddress.ino<BR>
 You'll have to manually specify the SSID and password, ie:
-` WiFi.begin("HackathonV4", "hackhack");`<BR>
+` WiFi.begin("hackathon", "att4hack");`<BR>
 Once compiled and loaded into the LaunchPad over the MSP Debug COM port, start a Serial Monitor on debug interface and reset the board. ( Location of the reset button: http://www.mouser.com/images/microsites/TI_MSP-430F5529LP_overview.jpg )<BR>
 Serial interface should display the connection progress, obtained IP address and MAC address of the board.
 
 
 
-# M2X
-LaunchPad Energia M2X API Client<BR>
+# Online API sidenote
+ - ThingSpeak<BR>https://thingspeak.com/<BR>http://community.thingspeak.com/documentation%20.../api/<BR>https://www.mathworks.com/help/thingspeak/rest-api.html
+ 
+
+ - LaunchPad Energia M2X API Client<BR>
 https://m2x.att.com/developer/tutorials/launchpad-energia<BR>
 https://github.com/attm2x/m2x-launchpad-energia/blob/master/README.md<BR>
 
