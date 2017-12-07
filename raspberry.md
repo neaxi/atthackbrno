@@ -29,13 +29,15 @@ Available connections:
 
 Passwords are the same for all the boards.<BR>
 Please change them to your own as a first step to prevent access of the other teams to your device.
-
- * root:&nbsp;raspiroot
- * pi:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raspipi
- * vnc:&nbsp;&nbsp;raspivnc
+  
+| Account | Password   |
+ -------- | ---------- |
+| root    | raspiroot  |
+| pi      | raspipi    |
+| vnc     | raspivnc   |
 
 # Connectivity
-Schematics: https://www.jameco.com/Jameco/workshop/circuitnotes/raspberry-pi-circuit-note.html
+Schematics: https://www.jameco.com/Jameco/workshop/circuitnotes/raspberry-pi-circuit-note.html <BR>
 GPIO pinout details: https://pinout.xyz
 
 
