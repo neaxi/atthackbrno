@@ -15,7 +15,7 @@ This repository aims to provide basic info about hardware which is available to 
 
 * Ultrasound range - HC-SR04
 * Temp/Hum - DHT11, DHT22
-* variable sensor kit - see detailed description on bottom of the page
+* variable sensor kit - see detailed description on bottom of the sensor page
 * RFID - RC512, YSoft keyboard reader
 * Magnetic relays
 * Water flow (YF-S201, YF-B1)
@@ -23,18 +23,10 @@ This repository aims to provide basic info about hardware which is available to 
 * Dust sensor (SHARP GP2Y1010AU0F)
 * PIR motion sensor (HC SR501)
 
-
- 
-
-### Output
+### Other peripherals
+* ADC convertors
+* 3.3V <> 5V convertor
 * LCD
    * I2C segment display
    * I2C graphical OLED display
    * char. LCD 
-
-
-
-
-
-
-
