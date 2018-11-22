@@ -1,11 +1,11 @@
 # Getting started with Raspberry Pi
 Hello, in front of you is Raspberry Pi 3 loaded with a default Raspbian OS.<BR>
-In case you would want to flash this image onto your device, you can find the .img file on local file share.
+In case you would want to flash this image onto your device, ~~you can find the .img file on local file share~~ ask one of the mentors to provide you with the image.
 
 # Network / How to connect
 ### Wi-Fi
 Raspberry is set to connect automatically to provided wifi network. <BR>
-IP address is assigned dynamically.<BR>
+IP address is assigned by our DHCP server.<BR>
 To find an IP for your Raspberry check the label on the board.<BR>
 RasPi01 = 10.10.1.1<BR>
 RasPi02 = 10.10.1.2<BR>
@@ -16,7 +16,7 @@ The connection is available mainly for direct connection with your laptop.<BR><B
 If you wish to test your application with ethernet connection, please change IP assignment to dhcp/dynamic before connecting to the switch. There are two options on how to do it:<BR><BR>
 &nbsp;&nbsp;&nbsp; **opt GUI)** change the setting in the system Network manager<BR>
 &nbsp;&nbsp;&nbsp; **opt CLI)** comment out the static assignemnt in /etc/dhcpcd.conf<BR><BR>
-Once connected you'll obtain IP equal to 10.10.1.100+raspi number<BR>
+Once connected you'll obtain IP equal to 10.10.1.100+[raspi number]<BR>
 RasPi01 = 10.10.1.101<BR>
 RasPi02 = 10.10.1.102<BR>
 etc...
@@ -24,7 +24,7 @@ etc...
 ## Access & Passwords
 Available connections:
  * SSH for CLI.
- * SFTP for file transfer.
+ * SFTP/SCP for file transfer.
  * VNC for remote GUI control.
 
 Passwords are the same for all the boards.<BR>
@@ -34,7 +34,7 @@ Please change them to your own as a first step to prevent access of the other te
  -------- | ---------- |
 | root    | raspiroot  |
 | pi      | raspipi    |
-| vnc     | raspivnc   |
+
 
 # Connectivity
 Schematics: https://www.jameco.com/Jameco/workshop/circuitnotes/raspberry-pi-circuit-note.html <BR>
@@ -62,7 +62,7 @@ Detailed info: https://projects.raspberrypi.org/en/projects/getting-started-with
 
 You can utilize following script to test out basic functionality.
 ```
-$ /home/pi/Documents/pi_camera_test.py --help
+$ /home/pi/python_demo/pi_camera_test.py --help
 Usage: pi_camera_test.py [OPTIONS]
 
 Options:
@@ -77,3 +77,14 @@ Options:
    - 1280x720 @ 60 fps
    - 640x480 @ 90 fps
 
+# Speaker pHAT
+Audio HAT containing amplifier, speaker and LED bar graph for projects requiring audio output.
+Pi Zero form factor.
+Tech. details: https://shop.pimoroni.com/products/speaker-phat
+HAT installer: https://github.com/pimoroni/speaker-phat
+
+# Explorer pHAT
+HAT to extend Pi with 5V input/output, analog input, 
+Pi Zero form factor.
+Installer: https://github.com/pimoroni/explorer-hat
+Documentation: https://github.com/pimoroni/explorer-hat/blob/master/documentation/Function-reference.md
