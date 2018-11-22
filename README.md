@@ -8,6 +8,9 @@ This repository aims to provide basic info about hardware which is available to 
 * [Texas Instruments MSP430](https://github.com/neaxi/atthackbrno/blob/master/TI_MSP430.md)
 * [IKEA TRÅDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
 
+* [Pycom](https://github.com/neaxi/atthackbrno/blob/master/pycom.md)
+* [BigClown](https://github.com/neaxi/atthackbrno/blob/master/bigclown.md)
+
 
 # Sensors & peripherals
 [Overview of sensors](https://github.com/neaxi/atthackbrno/blob/master/sensors.md) <BR>
