@@ -34,6 +34,7 @@ Please change them to your own as a first step to prevent access of the other te
  -------- | ---------- |
 | root    | raspiroot  |
 | pi      | raspipi    |
+| VNC     | raspivnc   |
 
 
 # Connectivity

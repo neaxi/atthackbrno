@@ -6,14 +6,14 @@ This repository aims to provide basic info about hardware which is available to 
    * Raspberry - Sense HAT
    * Raspberry - Pi Cam
 * [Texas Instruments MSP430](https://github.com/neaxi/atthackbrno/blob/master/TI_MSP430.md)
-* [IKEA TRÃ…DFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
+* [IKEA TRÃDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
 
 * [Pycom](https://github.com/neaxi/atthackbrno/blob/master/pycom.md)
 * [BigClown](https://github.com/neaxi/atthackbrno/blob/master/bigclown.md)
 
 
 # Sensors & peripherals
-[Overview of sensors](https://github.com/neaxi/atthackbrno/blob/master/sensors.md) <BR>
+[Overview of the sensor kit](https://github.com/neaxi/atthackbrno/blob/master/sensors.md) <BR>
 [Sensor kit photo leaflet](https://github.com/neaxi/v4hack/blob/master/sensor_kit_leaflet.pdf)
 
 * Ultrasound range - HC-SR04
@@ -25,6 +25,7 @@ This repository aims to provide basic info about hardware which is available to 
 * Gyro and accelerometer (MPU-6050)
 * Dust sensor (SHARP GP2Y1010AU0F)
 * PIR motion sensor (HC SR501)
+* ...
 
 ### Other peripherals
 * ADC convertors
