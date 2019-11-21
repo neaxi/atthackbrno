@@ -21,3 +21,9 @@ docs: https://docs.pycom.io/product-info-datasheets/boards/pysense
 ## Expansion board
 Added status LEDs, jumper connectors, button to enter 'Safe mode', ...\
 docs: https://docs.pycom.io/product-info-datasheets/boards/expansion3
+
+# IDEs
+## pymakr
+https://github.com/pycom/Pymakr
+## VSCode and Atom plugins
+https://docs.pycom.io/pymakr/installation/
