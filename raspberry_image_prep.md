@@ -1,3 +1,5 @@
+Guide for mentors on how to prepare the image for hackathon Raspberries and curious attendees who wonder what exact changes were done to the Raspbian OS they're handed. 
+
 # 1. Download fresh Raspbian image
 Without recomended software (ie bloatware)<BR>
 https://www.raspberrypi.org/downloads/raspbian/
@@ -109,8 +111,21 @@ apt purge <pkg>
 apt autoremove
 ```
 
+# 12. Sense HAT Python support
+Install: `python3 -m pip install sense-hat`<BR>
+Test: `from sense_hat import SenseHat`
 
-# 12. Cover your traces and dump CLI history
+# 13. Static IP config for eth0
+~~~~
+nano /etc/dhcpd.conf
+
+interface eth0
+static ip_address=192.168.1.10/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.1.1
+~~~~
+
+# LAST. Cover your traces and dump CLI history
 ```
 rm ~/.bash_history
 history -cw; >$HISTFILE
