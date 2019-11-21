@@ -6,7 +6,7 @@ This repository aims to provide basic info about hardware which is available to 
    * Raspberry - Sense HAT
    * Raspberry - Pi Cam
 * [Texas Instruments MSP430](https://github.com/neaxi/atthackbrno/blob/master/TI_MSP430.md)
-* [IKEA TRÃDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
+* [IKEA TRÅDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
 
 * [Pycom](https://github.com/neaxi/atthackbrno/blob/master/pycom.md)
 * [BigClown](https://github.com/neaxi/atthackbrno/blob/master/bigclown.md)
@@ -25,7 +25,7 @@ This repository aims to provide basic info about hardware which is available to 
 * Gyro and accelerometer (MPU-6050)
 * Dust sensor (SHARP GP2Y1010AU0F)
 * PIR motion sensor (HC SR501)
-* ...
+* much more...
 
 ### Other peripherals
 * ADC convertors
