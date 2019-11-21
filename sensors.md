@@ -51,6 +51,8 @@ https://learn.adafruit.com/monochrome-oled-breakouts <BR>
 https://github.com/squix78/esp8266-oled-ssd1306
 
 # 37 sensors kit
+## Resources
+[Overview of the sensor kit](https://github.com/neaxi/atthackbrno/blob/master/sensors.md) <BR><BR>
 Stuttgart university Git: https://github.com/timwaizenegger/raspberrypi-examples  <BR>
 More resources on the sensors: <BR>
 https://tkkrlab.nl/wiki/Arduino_37_sensors <BR>
