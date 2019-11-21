@@ -2,7 +2,7 @@
 Homepage: https://pycom.io/ \
 Full documentation: https://docs.pycom.io/
 
-Available boards:
+To get USB connectivity insert a LoPy4 board into any of the expansion boards.<BR>
 
 ## LoPy4
 ESP32 based platform supporting MicroPython\
