@@ -22,7 +22,7 @@ https://energia.nu/pinmaps/img/CC3100BOOST.jpg
 ## Energia IDE
 http://energia.nu/<BR>
 Energia is an open-source electronics prototyping platform …. with the goal to bring the Wiring and Arduino framework to the Texas Instruments MSP430 based LaunchPad. <BR>
-The Energia IDE is cross platform and supported on Mac OS, Windows, and Linux. <BR<BR>
+The Energia IDE is cross platform and supported on Mac OS, Windows, and Linux. 
 
 ## Setup guide for the MSP430F5529
 https://energia.nu/pinmaps/msp-exp430f5529/<BR><BR>

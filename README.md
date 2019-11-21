@@ -9,7 +9,7 @@ This repository aims to provide basic info about hardware which is available to 
 * [IKEA TRÅDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
 
 * [Pycom](https://github.com/neaxi/atthackbrno/blob/master/pycom.md)
-* [BigClown](https://github.com/neaxi/atthackbrno/blob/master/bigclown.md)
+* [BigClown Ultimate Multi Kit](https://developers.bigclown.com/basics/quick-start-guide)
 
 
 # Sensors & peripherals
