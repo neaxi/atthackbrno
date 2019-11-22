@@ -116,13 +116,24 @@ Install: `python3 -m pip install sense-hat`<BR>
 Test: `from sense_hat import SenseHat`
 
 # 13. Static IP config for eth0
-~~~~
-nano /etc/dhcpd.conf
+## 13.1 Network interface naming
+Turn of network interface name randomization.<BR>
+Add `net.ifnames=0 biosdevname=0` into `/boot/cmdline.txt` and reboot.
+    
+## 13.2 Static IP configuration
+Configuration is done in `/etc/dhcpcd.conf`<BR>
+Do NOT touch `/etc/network/interfaces` ! <BR>
+WAIT! - dhclient timeout must occur prior fallback to static is executed. 
 
-interface eth0
+~~~~
+profile static_eth0
 static ip_address=192.168.1.10/24
 static routers=192.168.1.1
 static domain_name_servers=192.168.1.1
+
+# fallback to static profile on eth0
+interface eth0
+fallback static_eth
 ~~~~
 
 # LAST. Cover your traces and dump CLI history
