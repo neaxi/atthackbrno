@@ -1,4 +1,4 @@
-# [#atthack2019](https://twitter.com/hashtag/atthack2019?f=tweets&vertical=default&src=hash) 
+#[#atthack](https://twitter.com/hashtag/atthack?f=tweets&vertical=default&src=hash) || [#atthack2019](https://twitter.com/hashtag/atthack2019?f=tweets&vertical=default&src=hash)
 This repository aims to provide basic info about hardware which is available to participants of AT&T Brno Hackathons.
 
 # Platforms
@@ -6,7 +6,7 @@ This repository aims to provide basic info about hardware which is available to 
    * Raspberry - Sense HAT
    * Raspberry - Pi Cam
 * [Texas Instruments MSP430](https://github.com/neaxi/atthackbrno/blob/master/TI_MSP430.md)
-* [IKEA TRÅDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
+* [IKEA TRÃ…DFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
 
 * [Pycom](https://github.com/neaxi/atthackbrno/blob/master/pycom.md)
 * [BigClown Ultimate Multi Kit](https://developers.bigclown.com/basics/quick-start-guide)
