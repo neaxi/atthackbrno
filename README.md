@@ -1,4 +1,4 @@
-#[#atthack](https://twitter.com/hashtag/atthack?f=tweets&vertical=default&src=hash) || [#atthack2019](https://twitter.com/hashtag/atthack2019?f=tweets&vertical=default&src=hash)
+# [#atthack](https://twitter.com/hashtag/atthack?f=tweets&vertical=default&src=hash) || [#atthack2019](https://twitter.com/hashtag/atthack2019?f=tweets&vertical=default&src=hash)
 This repository aims to provide basic info about hardware which is available to participants of AT&T Brno Hackathons.
 
 # Platforms
