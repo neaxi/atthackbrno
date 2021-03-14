@@ -10,7 +10,7 @@ Linux: https://www.raspberrypi.org/documentation/installation/installing-images/
 `$ dd bs=4M if=2019-09-26-raspbian-buster.img of=/dev/sdX conv=fsync`
 
 # 3. Headless wi-fi setup
-Copy wpa_supplicant.conf into /boot.<BR>
+Create `wpa_supplicant.conf` in `/boot` folder with wi-fi config.<BR>
 https://howchoo.com/g/ndy1zte2yjn/how-to-set-up-wifi-on-your-raspberry-pi-without-ethernet
 ```bash
 country=US # Your 2-digit country code
