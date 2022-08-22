@@ -22,9 +22,16 @@ network={
 }
 ```
 
-# 4. Enable SSH headless style
+# 4. Pre-boot setup:
+## 4.1. Enable SSH headless style
 Create empty file named ```ssh``` on /boot.
 
+## 4.2. Setup a new user
+["wizard is no longer optional, as this is how a user account is created; until you create a user account, you cannot log in to the desktop"](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)  
+Get encrypted password: `echo 'mypassword' | openssl passwd -6 -stdin`  
+Create `/boot/userconf.txt`  
+Content: `pi:$6$jBPcARXlTKaqzGmk$cRN70EK0Ir/XDHwPMhpmLYFC9xKtyrUdZogDTVnbjfamTk7GokusEWaQjbucccqJ0oanMhfHUcd34ePWiXq85.`
+    
 # 5. Boot the Pi
 Addresses on the network are assigned per the DHCP binding.<BR>
 When in doubt, check from the DHCP server.
