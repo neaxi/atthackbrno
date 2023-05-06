@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
+# Sample of shutdown button using GPIO and interrupts
 # https://raspi.tv/2013/how-to-use-interrupts-with-python-on-the-raspberry-pi-and-rpi-gpio-part-3
+
+# run following to ensure libraries are available
+# sudo apt-get install python3-dev python3-rpi.gpio
 
 import RPi.GPIO as GPIO  
 import os

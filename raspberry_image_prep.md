@@ -11,9 +11,13 @@ Linux: https://www.raspberrypi.org/documentation/installation/installing-images/
 
 # 3. Headless wi-fi setup
 Create `wpa_supplicant.conf` in `/boot` folder with wi-fi config.<BR>
-https://howchoo.com/g/ndy1zte2yjn/how-to-set-up-wifi-on-your-raspberry-pi-without-ethernet
+https://howchoo.com/g/ndy1zte2yjn/how-to-set-up-wifi-on-your-raspberry-pi-without-ethernet  
+
+`$ wpa_passphrase YOUR_SSID YOUR_PASSWORD` can be used to generate network entry.
+
 ```bash
 country=US # Your 2-digit country code
+update_config=1
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 network={
     ssid="YOUR_NETWORK_NAME"
@@ -74,11 +78,20 @@ Create authorized keys:<BR>
 
 
 # 10. VNC
+Configure VNC password: `$ vncpasswd -service`
 `$ nano /root/.vnc/config.d/vncserver-x11`<BR>
 Replace `Authentication=SystemAuth` with `Authentication=VncAuth`.<BR>
-Configure VNC password: 
-`$ vncpasswd -service`
+sample:
+```sh
+# cat .vnc/config.d/vncserver-x11
 
+Authentication=VncAuth
+Encryption=PreferOff
+Password=a421a8df5bcf5b7f
+```
+
+In case of persisting issues, it might be needed to go through GUI:  
+`VNC > Options > Users & Perms > Standard user > Add > Allow connections from legacy VNC`
 
 # 11. minor stuff
 ## 11.1 MOTD

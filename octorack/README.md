@@ -23,7 +23,8 @@ ____
     - `advanced -> predictable network interface names`
   - #9 - `apt update && apt upgrade`
   - #13 - fallback to static ethernet address when DHCP fails
-- optional - disable IPv6 - https://cwesystems.com/?p=231
+- optional - disable IPv6 - https://cwesystems.com/?p=231  
+  must use `service procps force-reload` as `reload` option is [no longer available](https://bugs.launchpad.net/ubuntu/+source/procps/+bug/1908241)
 
 ___
 
@@ -44,8 +45,9 @@ run-parts /etc/update-motd.d'
 ```
 details: https://fishi.devtail.io/weblog/2015/02/06/dyamic-login-messages-update-motd/  
 
-optional `/etc/update-motd.d/00-sysinfo` banner
-https://gist.github.com/fishi0x01/417de50e68d4b8d0f6f1#file-sys-info-sh
+optional `/etc/update-motd.d/00-sysinfo` banner  
+https://gist.github.com/fishi0x01/417de50e68d4b8d0f6f1#file-sys-info-sh  
+`sudo wget -O /etc/update-motd.d/00-sysinfo https://raw.githubusercontent.com/neaxi/atthackbrno/master/octorack/00-sysinfo`
 
 ### modify welcome script to show interface + ip and remove extra chitchat
 `/home/pi/scripts/welcome`  
@@ -57,37 +59,10 @@ https://gist.github.com/fishi0x01/417de50e68d4b8d0f6f1#file-sys-info-sh
 - extend history
 - ensure color prompt  
  
-### optional - install *The Fuck*
-https://github.com/nvbn/thefuck#installation
+### optional install 
+ - [*The Fuck*](https://github.com/nvbn/thefuck#installation)
+ - `apt install tmux mc`
 
-
-## fallback AP setup
-Utilize hotspot installer:  
-https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/183-raspberry-pi-automatic-hotspot-and-static-hotspot-installer  
-```sh
-curl "https://www.raspberryconnect.com/images/hsinstaller/AutoHotspot-Setup.tar.gz" -o AutoHotspot-Setup.tar.gz
-tar -xzvf AutoHotspot-Setup.tar.gz
-cd Autohotspot
-sudo ./autohotspot-setup.sh
-```
-- opt1 - Install autohotspot  
-- opt5 - change target SSID and password  
-- opt7 - change AP SSID and password   
-
-If you wish to change the default RasPi AP IP (`192.165.50.5`), do so in `/usr/bin/autohotspotN`.  
-e.g.: `sudo sed -i 's/192.168.50.5/192.168.69.1/' /usr/bin/autohotspotN`.  
-Related DHCP ip range is set in `/etc/dnsmasq.conf`    
-```bash
-cd; awk '!/dhcp-range/' /etc/dnsmasq.conf | awk NF > temp_dnsmasq
-echo -e "dhcp-range=192.168.69.150,192.168.69.200,12h\n" >> temp_dnsmasq
-sudo mv temp_dnsmasq /etc/dnsmasq.conf
-```
-
-- [issues with newlines and special chars](https://gist.github.com/neaxi/cbd68f9de00efb9ce1c5145d875de163) are already resolved
-- reboot   
-- opt6 - Force hotspot to activate and test  
-  - **!!will cause connection drop for a headless wifi setup**
-  - `sudo /home/pi/Autohotspot/autohotspot-setup.sh`  
 
 ## increase i2c speed
 https://learn.adafruit.com/monochrome-oled-breakouts/python-setup
@@ -95,6 +70,31 @@ https://learn.adafruit.com/monochrome-oled-breakouts/python-setup
 - find hardware interfaces / dtparam section and add following:  
  `dtparam=i2c_baudrate=1000000`
 
+
+## HDMI touchscreen
+`sudo /home/pi/scripts/install-desktop`  
+`sudo raspi-config` ...  `-> system -> boot -> autologin desktop`  
+
+setup browser in [kiosk mode](https://blog.deepgram.com/chromium-kiosk-pi/)  
+`sudo nano /etc/xdg/lxsession/LXDE-pi/autostart`
+
+
+
+configure LCD in `/boot/config.txt`
+```bash
+disable_overscan=1
+
+overscan_left=40
+overscan_right=-40
+overscan_top=0
+overscan_bottom=0
+
+framebuffer_width=1024
+framebuffer_height=600
+
+hdmi_group=1
+hdmi_mode=4
+```
 ___
 # **#02 - Configuration involving OctoPrint**
 ## Python3
@@ -131,10 +131,44 @@ Update to latest:
 
 
 ### webcam / octolapse setup
-`sudo nano /boot/octopi.txt`
-```
+Resoltuion guides for CSI camera: https://picamera.readthedocs.io/en/latest/fov.html#sensor-modes  
+Omit FPS `-f` parameter if you're getting poor resolution/low color space.  
+`sudo nano /boot/octopi.txt`  
+USB webcam:
+```bash
 camera="auto"
-camera_usb_options="-r 1920x1080 -f 30"
+camera_usb_options="-r 1920x1080 -q 80 -rot 180"
+```
+
+CSI webcam. In case it's not being detected, change to `camera="auto"`
+```bash
+camera="raspi"
+camera_raspi_options="-r 1920x1080 -q 80 -rot 180"  
+```
+
+If webcam image quality issues prevails, create a systemd service which resetes the webcamd service after the platform boots. Guide: https://www.golinuxcloud.com/run-script-after-n-minutes-of-boot-systemd/
+```bash
+# cat /etc/systemd/system/reset_webcamd_after_boot.timer
+[Unit]
+Description="Reset webcamd 1 min after startup"
+
+[Timer]
+OnBootSec=1min
+
+[Install]
+WantedBy=default.target
+
+# cat /etc/systemd/system/reset_webcamd_after_boot.service
+[Unit]
+Description="Reset webcamd 1 min after startup"
+
+[Service]
+Type=oneshot
+ExecStart=systemctl restart webcamd.service
+
+# sudo systemctl disable reset_webcamd_after_boot.service
+# sudo systemctl enable reset_webcamd_after_boot.timer
+# systemctl status reset_webcamd_after_boot.timer
 ```
 Profile has to be created:  
 `OctoPrint > Settings > Octolapse > Printer > Add Profile > Import Printer`
@@ -169,8 +203,9 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=205016
 4. `sudo chown -R pi:pi /media/timelapse_flash`
 5. `sudo chmod -R 775 /media/timelapse_flash`
 6. `sudo nano /etc/fstab`
-7. add mountpoint with known label; e.g. OCTOMK2  
-`LABEL=OCTOMK2  /media/timelapse_flash  vfat    defaults,nofail,uid=pi,gid=pi,rw,x-systemd.automount 0       0`
+7. Find flash drive UUID in `blkid`
+7. add mountpoint with known UUID  
+`LABEL=XXXX-YYYY  /media/timelapse_flash  vfat    defaults,nofail,uid=pi,gid=pi,rw,x-systemd.automount 0       0`
 8. `sudo mount -a`
 9. `ls -l /media/timelapse_flash/`
 10. `rm -rf /media/timelapse_flash/*`
@@ -212,14 +247,51 @@ python3 -u /home/pi/scripts/safe_shutdown.py &
 ___
 # #04 - Checklist
 - `pi` and `root` passwords changed
-- hotspot password set
+- hotspot password set (if installed)
 - static IPs for ethernet and hotspot fallback set
 - Octoprint credentials changed
 - Octoprint plugins configured
 - API keys provided where needed (custom script, astroprint, octorant)
+___
+# #05 - Optional
+
+##  Home Assistant integration
+[RPi Reporter MQTT2HA Daemon](https://github.com/ironsheep/RPi-Reporter-MQTT2HA-Daemon)  
+Change `interval_in_minutes` to 1 minute.   
+[custom Lovelace dashboard card](https://github.com/ironsheep/lovelace-rpi-monitor-card)
 
 ___
-# #05 - Possible TODO
+
+## fallback AP setup
+Utilize hotspot installer:  
+https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/183-raspberry-pi-automatic-hotspot-and-static-hotspot-installer  
+```sh
+curl "https://www.raspberryconnect.com/images/hsinstaller/AutoHotspot-Setup.tar.gz" -o AutoHotspot-Setup.tar.gz
+tar -xzvf AutoHotspot-Setup.tar.gz
+cd Autohotspot
+sudo ./autohotspot-setup.sh
+```
+- opt1 - Install autohotspot  
+- opt5 - change target SSID and password  
+- opt7 - change AP SSID and password   
+
+If you wish to change the default RasPi AP IP (`192.165.50.5`), do so in `/usr/bin/autohotspotN`.  
+e.g.: `sudo sed -i 's/192.168.50.5/192.168.69.1/' /usr/bin/autohotspotN`.  
+Related DHCP ip range is set in `/etc/dnsmasq.conf`    
+```bash
+cd; awk '!/dhcp-range/' /etc/dnsmasq.conf | awk NF > temp_dnsmasq
+echo -e "dhcp-range=192.168.69.150,192.168.69.200,12h\n" >> temp_dnsmasq
+sudo mv temp_dnsmasq /etc/dnsmasq.conf
+```
+
+- [issues with newlines and special chars](https://gist.github.com/neaxi/cbd68f9de00efb9ce1c5145d875de163) are already resolved
+- reboot   
+- opt6 - Force hotspot to activate and test  
+  - **!!will cause connection drop for a headless wifi setup**
+  - `sudo /home/pi/Autohotspot/autohotspot-setup.sh`  
+
+___
+# #06 - Possible TODO
  - additional button to bounce wifi
    - in case the raspi networking ends up in undefined state, seems to be connected, but can't be pinged
    - bounce all available network interfaces?
