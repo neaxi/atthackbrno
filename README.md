@@ -16,7 +16,7 @@ The repository is updated continuously. Please come back to check for updates pr
 * [IKEA TRÅDFRI](https://github.com/neaxi/atthackbrno/blob/master/tradfri.md)
 
 * [ESP32 - LILYGO, Pycom](https://github.com/neaxi/atthackbrno/blob/master/esp32.md)
-* [BigClown Ultimate Multi Kit](https://developers.bigclown.com/basics/quick-start-guide)
+* [TOWER Ultimate IoT Multi Kit](https://docs.hardwario.com/tower/)
 
 # Sensors & peripherals
 
