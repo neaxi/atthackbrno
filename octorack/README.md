@@ -291,10 +291,49 @@ sudo mv temp_dnsmasq /etc/dnsmasq.conf
   - `sudo /home/pi/Autohotspot/autohotspot-setup.sh`  
 
 ___
-# #06 - Possible TODO
+# #06 - touch LCD
+
+## Setting up the LCD
+https://wiki.ubuntu.com/X/InputCoordinateTransformation
+1. rotation  
+    `$ cat /boot/config.txt`  
+    `display_rotate=3`
+2. calibration  
+    https://raspberrypi.stackexchange.com/questions/60872/inverted-gpio-touchscreen-using-99-calibration-conf
+
+example: https://gist.github.com/neaxi/9425f1b5ff99eacfba08fa9ce70f1544
+
+## Launch the webpage/UI after reboot
+
+1. `apt install epiphany-browser`
+2. open it and:
+   - manually navigate to `http://127.0.0.1`
+   - log into the octoprint and check "Remember me" for autologin
+3. create a launcher:
+   - no need to specify a webpage. Epiphany will resume with the last opened tab -> the one manually opened in #2
+   - `/home/pi/browser_launch.sh`
+   ```sh
+     #!/bin/bash
+     sleep 60 # give some time for OPrint to boot
+     # Launch Epiphany browser and wait for it to open
+     epiphany-browser --display=:0 &
+     ```
+4. add to autostart. make sure LXDE panels/UI is launched too  
+    LXDE autostart - `/etc/xdg/lxsession/LXDE/autostart`   
+    user autostart - `~/.config/lxsession/LXDE-pi/autostart`
+    ```sh
+    @lxpanel --profile LXDE-pi
+    @pcmanfm --desktop --profile LXDE-pi
+    @xscreensaver -no-splash
+    @xset s off
+    @xset s noblank
+    @/home/pi/browser_launch.sh
+    ```
+
+___
+# #07 - Possible TODO
  - additional button to bounce wifi
    - in case the raspi networking ends up in undefined state, seems to be connected, but can't be pinged
    - bounce all available network interfaces?
  - delayed start of the fallback AP service
    - to give wlan0 enough time to connect on it's own after power up prior intervening with fallback 
- - migrate to touch LCD?
