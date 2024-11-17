@@ -1,20 +1,21 @@
 # ESP32
 
-## IDEs
-
-### pymakr
-
-<https://github.com/pycom/Pymakr>
-
-### VSCode and Atom plugins
-
-<https://docs.pycom.io/pymakr/installation/>
-
 ## Generic ESP32 - MicroPython
 
 <https://docs.micropython.org/en/latest/esp32/quickref.html>
 
 <https://github.com/neaxi/upy_workshop>
+
+## Basic tutorial with ESP32 + MicroPython
+
+Sample guide with code about how to:
+
+https://github.com/neaxi/upy_workshop
+
+- use I/O (incl. non-blocking interrupts and asyncio)
+- read ADC
+- connect to wifi and sync NTP
+- HTTP GET / POST API calls
 
 ## ESP32 T-Display by LILIGO
 
@@ -63,21 +64,20 @@ To get USB connectivity insert a LoPy4 board into any of the expansion boards.
 
 ESP32 based platform supporting MicroPython\
 Connectivity: LoRa, Sigfox, WiFi, Bluetooth\
-docs: https://docs.pycom.io/product-info-datasheets/development/lopy4
+docs: https://docs.pycom.io/datasheets/development/lopy4/
 
 ### Pytrack
 
 Sensors: Navstar GPS, Glonass, Galileo, QZSS, accelerometer\
-docs: https://docs.pycom.io/product-info-datasheets/boards/pytrack
+docs: https://docs.pycom.io/datasheets/expansionboards/pytrack/
 
 ### Pysense
 
 Sensors: light, barometric pressure, humidity, accelerometer, temperature\
 On-board: LiPo charger, MicroSD compatible\
-docs: https://docs.pycom.io/product-info-datasheets/boards/pysense
+docs: https://docs.pycom.io/datasheets/expansionboards/pysense/
 
 ### Expansion board
 
 Added status LEDs, jumper connectors, button to enter 'Safe mode', ...\
-docs: https://docs.pycom.io/product-info-datasheets/boards/expansion3
-
+docs: https://docs.pycom.io/datasheets/expansionboards/expansion3/

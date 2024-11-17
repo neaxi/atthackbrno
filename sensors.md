@@ -1,67 +1,83 @@
 # Sensors
-A - analog<BR>
-D - digital<BR>
-A/D - analog which works also as a digital with expected limitations.<BR><BR>
-Most of the sensors are digital input//output and will work with basic GPIO.<BR>
 
-Pay attention to technical specifications, like input voltage needed for correct operation. <BR>
+A - analog  
+D - digital  
+A/D - analog which works also as a digital with expected limitations.  
+  
+Most of the sensors are digital input//output and will work with basic GPIO.  
+
+Pay attention to technical specifications, like input voltage needed for correct operation.  
 <span style="color:red">**Watch out for logic which is used by the device (3.3V vs. 5V).**</span>
   
 If you're adapting Arduino code to Texas Instruments MSP430, you need to consider that Arduino has 10 bit ADC and provides 0-1023 resolution, but TI's ADC is 12 bit and returns values 0-4095.
 
-
-
 ## RasPi GPIO reminder
-**Simple output pin**<BR>
-`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM`<BR>
-`usedPin = 37                # pin 37 = BCM GPIO26`<BR>
-`GPIO.setup(usedPin , GPIO.OUT)`<BR>
-`GPIO.output(usedPin , GPIO.HIGH)`<BR>
-`GPIO.output(usedPin , GPIO.LOW)`<BR><BR>
 
-**Simple input pin**<BR>
-`GPIO.setmode(GPIO.BOARD)    # OR GPIO.BCM`<BR>
-`usedPin = 37                # pin 37 = BCM GPIO26`<BR>
-`GPIO.setup(usedPin , GPIO.IN, pull_up_down=GPIO.PUD_UP)`<BR>
-`GPIO.input(usedPin) `
+### Simple output pin
 
+```py
+GPIO.setmode(GPIO.BOARD)        # OR GPIO.BCM
+usedPin = 37                    # pin 37 = BCM GPIO26
 
-# RC522 - RFID reader
+GPIO.setup(usedPin, GPIO.OUT)
+GPIO.output(usedPin, GPIO.HIGH)
+GPIO.output(usedPin, GPIO.LOW)
+```
+
+### Simple input pin
+
+```py
+GPIO.setmode(GPIO.BOARD)        # OR GPIO.BCM
+usedPin = 37                    # pin 37 = BCM GPIO26
+
+GPIO.setup(usedPin , GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.input(usedPin)
+```
+
+## RC522 - RFID reader
+
 https://github.com/ondryaso/pi-rc522
-Connected by the table, git clone/pip install, executed the samples, works.<BR>
+Connected by the table, git clone/pip install, executed the samples, works.  
 Can read/write the chips - check git examples.
 
-# MPU-6050 - Gyro and accelerometer
-http://blog.bitify.co.uk/2013/11/interfacing-raspberry-pi-and-mpu-6050.html <BR>
-http://blog.bitify.co.uk/2013/11/reading-data-from-mpu-6050-on-raspberry.html <BR>
-Check on which i2c bus is the sensor present. Should be 0 for old RasPi and 1 for newer models. 
-Modify your source code accordingly to use correct bus.<BR>
+## MPU-6050 - Gyro and accelerometer
+
+[Interfacing Raspberry Pi and MPU-6050](https://web.archive.org/web/20181011074429/http://blog.bitify.co.uk/2013/11/interfacing-raspberry-pi-and-mpu-6050.html)  
+[Reading MPU6050 Data with Raspberry Pi and Python](https://machinelearningsite.com/reading-mpu6050-data-with-raspberry-pi-and-python/)
+
+Check on which i2c bus is the sensor present. Should be 0 for old RasPi and 1 for newer models.  
+Modify your source code accordingly to use correct bus.  
 `i2cdetect -y 01`
 
-# SHARP GP2Y1010AU0F airborne dust sensor
-[Datasheet](http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf) <BR>
-[Arduino setup](https://github.com/PaulZC/GP2Y1010AU0F_Dust_Sensor) <br>
+## SHARP GP2Y1010AU0F airborne dust sensor
 
-# HC SR501
-[arduino manual](http://henrysbench.capnfatz.com/henrys-bench/arduino-sensors-and-input/arduino-hc-sr501-motion-sensor-tutorial/) <BR>
+[Datasheet](http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf)  
+[Arduino setup](https://github.com/PaulZC/GP2Y1010AU0F_Dust_Sensor)  
+
+## HC SR501 PIR motion sensor
+
+[arduino manual](http://henrysbench.capnfatz.com/henrys-bench/arduino-sensors-and-input/arduino-hc-sr501-motion-sensor-tutorial/)  
 [RasPi manual](https://www.modmypi.com/blog/raspberry-pi-gpio-sensing-motion-detection)
   
-# SSD1306 OLED display
-https://learn.adafruit.com/monochrome-oled-breakouts <BR>
+## SSD1306 OLED display
+
+https://learn.adafruit.com/monochrome-oled-breakouts  
 https://github.com/squix78/esp8266-oled-ssd1306
 
-# 37 sensors kit
-## Resources
-[Overview of the sensor kit](https://github.com/neaxi/atthackbrno/blob/master/sensors.md) <BR><BR>
-Stuttgart university Git: https://github.com/timwaizenegger/raspberrypi-examples  <BR>
-More resources on the sensors: <BR>
-https://tkkrlab.nl/wiki/Arduino_37_sensors <BR>
-http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino <BR>
+## 37 sensors kit
 
-## Overview and notes
+### Resources
+[Overview of the sensor kit](./sensor_kit_leaflet.pdf)  
+Stuttgart university Git: https://github.com/timwaizenegger/raspberrypi-examples  
+More resources on the sensors:  
+https://wiki.tkkrlab.nl/tkkrlab.nl/wiki/Arduino_37_sensors.html
+http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino  
+
+### Overview and notes
+
 | No. | Type | Sensor | Notes
 | --- | --- | --- | ----
-| KY001| D| Temp module| https://tkkrlab.nl/wiki/Arduino_KY-001_Temperature_sensor_module
+| KY001| D| Temp module| https://wiki.tkkrlab.nl/tkkrlab.nl/wiki/Arduino_KY-001_Temperature_sensor_module.html
 | KY002| D| Vibration sensor| 
 | KY003| A| Hall sensor| 
 | KY004| D| Button| Connects S and (-) pins when pressed. <BR> (+) pin is not connected. <BR> Remember to set pin as pull-up.
@@ -74,7 +90,7 @@ http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino <BR
 | KY012| A/D| active buzzer| (it's with white sticker) - creates sound when connected to power
 | KY013| A| temp module| 
 | KY015| D| DHT11| https://github.com/szazo/DHT11_Python
-| KY016| A/D| RGB LED diode| WARNING: this is Common Anode diode, so pin (-) is to be connected with + voltage, diode is lit when LOW is put onto pin <BR> Attenion: pins BLUE and RED swapped
+| KY016| A/D| RGB LED diode| WARNING: this is Common Anode diode, so pin (-) is to be connected with + voltage, diode is lit when LOW is put onto pin <BR> Attention: pins BLUE and RED swapped
 | KY017| D| Mercury tilt switch| Digital input. + pin not connected
 | KY018| A| Photoresistor| Analog measurement of light intensity, changes resistance. Measure resistance and design voltage divider
 | KY019| D| 5V relay| (+) and (-) have to be connected, when S is pull up
@@ -98,4 +114,3 @@ http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino <BR
 | KY038| D| microphone| Same as above
 | KY039| A| heartbeat sensor| 
 | KY040| D| Rotary encoder| Technical details: http://guy.carpenter.id.au/gaugette/2013/01/14/rotary-encoder-library-for-the-raspberry-pi/ <BR> How to connect + source: http://www.stuffaboutcode.com/2015/05/raspberry-pi-and-ky040-rotary-encoder.html
-

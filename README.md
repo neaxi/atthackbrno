@@ -1,10 +1,10 @@
-# [#atthack](https://twitter.com/hashtag/atthack?f=tweets&vertical=default&src=hash) || [#atthack2023](https://twitter.com/hashtag/atthack2023?f=tweets&vertical=default&src=hash)
+# [#atthack](https://twitter.com/hashtag/atthack?f=tweets&vertical=default&src=hash) || [#atthack2024](https://twitter.com/hashtag/atthack2023?f=tweets&vertical=default&src=hash)
 
 This repository aims to provide basic info about hardware which is available to participants of AT&T Brno Hackathons.
 
 The repository is updated continuously. Please come back to check for updates prior the event.
 
-# Platforms
+## Platforms
 
 * [Raspberry Pi 3](https://github.com/neaxi/atthackbrno/blob/master/raspberry.md)
   * [Sense HAT](https://github.com/neaxi/atthackbrno/blob/master/raspberry.md#sense-hat)
@@ -18,7 +18,7 @@ The repository is updated continuously. Please come back to check for updates pr
 * [ESP32 - LILYGO, Pycom](https://github.com/neaxi/atthackbrno/blob/master/esp32.md)
 * [TOWER Ultimate IoT Multi Kit](https://docs.hardwario.com/tower/)
 
-# Sensors & peripherals
+## Sensors & peripherals
 
 List of components, sensors and peripherals which can be borrowed from us.  
 **List is non-exhaustive - feel free to ask for anything else coming up to your mind.**  
@@ -37,7 +37,9 @@ What needs to be done? And what can we offer:
 
 **Signalization?**
 
-* Addressable LEDs, OLED displays
+* Addressable LEDs (WS2813), OLED displays
+  * WS2813 - https://www.sdiplight.com/ws2813-led-strip/
+  * OLED - https://learn.adafruit.com/monochrome-oled-breakouts/python-wiring
 * E-Ink display 12956
 
 **Temperature, humidity and atmospheric pressure?**
@@ -76,7 +78,9 @@ What needs to be done? And what can we offer:
 
 **Power? Voltage? Current?**
 
-* [Sonoff POW](https://dratek.cz/martin/48234-sonoff-pow-r2-wifi-chytry-spinac-s-merenim-spotreby.html), Neolite smart plugs
+* [Sonoff POW](https://dratek.cz/martin/48234-sonoff-pow-r2-wifi-chytry-spinac-s-merenim-spotreby.html)
+* Neolite smart plugs
+* INA219 + INA3221 - https://learn.adafruit.com/adafruit-ina219-current-sensor-breakout/python-circuitpython
 
 * Debugging?
   * Stabilized power supply, oscilloscope, voltmeters, ...
