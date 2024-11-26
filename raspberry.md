@@ -3,7 +3,7 @@
 Hello, in front of you is Raspberry Pi 3 loaded with a default Raspbian OS.  
 In case you would want to flash this image onto your device, ~~you can find the .img file on local file share~~ ask one of the mentors to provide you with the image.
 
-# Network / How to connect
+## Network / How to connect
 
 ### Wi-Fi
 
@@ -41,18 +41,17 @@ Available connections:
 Passwords are the same for all the boards.  
 Please change them to your own as a first step to prevent access of the other teams to your device.
   
-| Account | Password   |
- -------- | ---------- |
-| root    | raspiroot  |
-| pi      | raspipi    |
-| VNC     | raspivnc   |
+| Account | Password  |
+| ------- | --------- |
+| root    | raspiroot |
+| pi      | raspipi   |
 
-# Connectivity
+## Connectivity
 
 Schematics: https://www.jameco.com/Jameco/workshop/circuitnotes/raspberry-pi-circuit-note.html  
 GPIO pinout details: https://pinout.xyz
 
-# Sense HAT
+## Sense HAT
 
 Python library is already present in the Raspbian OS.  
 Sense HAT provides following for the Raspberry:  
@@ -67,9 +66,23 @@ Sense HAT provides following for the Raspberry:
 * 8x8 RGB LED matrix
 
 API reference: https://pythonhosted.org/sense-hat/api/  
-Tutorial: https://www.raspberrypi.org/learning/getting-started-with-the-sense-hat/
+Tutorial: https://www.raspberrypi.com/documentation/accessories/sense-hat.html
   
-# Pi Camera
+## Pi AI Camera
+
+**Specs:**  
+https://www.raspberrypi.com/products/ai-camera/
+
+* 12MP sensor Sony IMX500
+* Video modes:
+  * 4056×3040 @ 10fps
+  * 2028×1520 @ 30fps
+
+**How to:**
+
+https://www.raspberrypi.com/news/how-to-get-started-with-your-raspberry-pi-ai-camera/
+
+## Pi Camera
 
 Camera is connected over the CSI interface on the mainboard.  
 Detailed info: https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
@@ -93,14 +106,14 @@ Options:
   * 1280x720 @ 60 fps
   * 640x480 @ 90 fps
 
-# Speaker pHAT
+## Speaker pHAT
 
 Audio HAT containing amplifier, speaker and LED bar graph for projects requiring audio output.  
 Pi Zero form factor.  
-Tech. details: https://shop.pimoroni.com/products/speaker-phat  
+Tech. details: https://web.archive.org/web/20210725202304/https://shop.pimoroni.com/products/speaker-phat  
 HAT installer: https://github.com/pimoroni/speaker-phat
 
-# Explorer pHAT
+## Explorer pHAT
 
 HAT to extend Pi with 5V input/output, analog input,  
 Pi Zero form factor.  
