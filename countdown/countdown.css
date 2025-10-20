@@ -1,77 +1,88 @@
-body {
+html, body {
     text-align: center;
-    /*padding: 100px 60px;*/
-    background: #FFF;
     font-family: sans-serif;
-    /*font-weight: lighter;*/
     font-weight: bold;
-    height: 100%;
-}
+    
+    width: 99%;
+    height: 99%;
+
+    justify-content: center;
+    display: flex;
+  }
 
 @font-face {
-  font-family: myFirstFont;
-/* https://www.dafont.com/monofonto.font */
-  src: url("monofonto rg.otf");
+  font-family: monofont;
+  src: url("resources/LTSuperiorMono-Bold.otf");
 }
 
+#content {
+  top: 0px;
+  position: relative;
+  /*background-color: #999;*/
+  width: 99.9%;
+  height: 99%;
+
+  
+}
+
+#banner_top {
+  border: 0.1px solid rgba(0,0,0,0);
+  
+  position: relative;
+  top: 0px;
+  /*width: 90%;*/
+  /*height: 50%;*/
+  background-image: url('resources/background.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  /*background-size: contain;*/
+  background-size: 50% auto;
+  /*z-index: 1; /* Ensure the background is behind the text */
+
+  font-family: "monofont";
+}
+
+
+#notice {
+  /* font-size: 12em; */
+  font-family: "Calibri";
+  /*font-weight: 400;*/
+  /*padding: 20px;*/
+  color: black;
+  margin-top: 12%;
+}
+
+
 #timer {
-    font-size: 21em;
-    font-family: "myFirstFont";
+    /*font-size: 21em; /* 21 em = 336px*/
     /*font-weight: 400;*/
-    margin-top: 100px;
-    padding: 10px;
+    /* margin-top: 3%; /*100px => 100 / 1080*/
+    padding: 20px;
     color: black;
 }
 
-#notice {
-  font-size: 12em;
-  font-family: "Calibri";
-  /*font-weight: 400;*/
-  padding: 10px;
-  color: black;
-}
-
 #timer div {
+    /* prevents breaking the individual timer divs into newlines */
     display: inline-block;
 }
 
-/*
-#timer div {
-    display: inline-block;
-    min-width: 90px;
-    padding: 60px;
-    background: #020b43;
-    border-radius: 10px;
-    border: 2px solid #030d52;
-    margin: 15px;
-}
-*/
-#timer span {
-    color: #000000;
-    display: block;
-    margin-top: 45px;
-    font-size: .35em;
-    /* font-weight: 400; */
-    font-weight: bold;
+.red {
+  color: red;
+  transition: color 1s;
 }
 
-
-#banner {
+#banner_bottom {
     position:fixed;
     bottom:0px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 92%;
+    width: 100%;
 }
-
-
 
 #buttons {
   position:fixed;
   bottom:0px;
   display: block;
   margin-left: 90%;
-
-
 }
